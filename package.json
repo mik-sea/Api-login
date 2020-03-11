@@ -11,8 +11,10 @@
     "type": "git",
     "url": "git+https://github.com/mik-sea/Api-login.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "simple"
+  ],
+  "author": "mik",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mik-sea/Api-login/issues"
@@ -20,7 +22,6 @@
   "homepage": "https://github.com/mik-sea/Api-login#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "ejs": "^3.0.1",
     "express": "^4.17.1"
   }
 }
