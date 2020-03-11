@@ -9,7 +9,7 @@ const data = {}
 app.use(bodyParser.json())
 app.use(cors())
 
-app.get('/', (_, res) => res.send('Hello World!'))
+app.get('/', (_, res) =>{ res.send('Hello World!')})
 
 app.post('/register', (req, res) => {
         const { body } = req
