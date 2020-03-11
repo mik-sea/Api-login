@@ -47,8 +47,8 @@ app.post('/login',(req,res)=>{
         }
 })
 app.get("/list",(req,res)=>{
-    var email = req.param('email')
-    console.log(email)
+    var email = req.query.email
+    // console.log(users[email])
     return res.json(users[email])
 })
 
@@ -80,6 +80,6 @@ app.post("/getPoint",(req,res)=>{
 //     console.log(JSON.stringify(prize))
 // })
 
-// app.listen(3000 , console.log('App started on port 3000'))
-const PORT = process.env.PORT || 3001;
-app.listen(PORT);
+app.listen(3000 , console.log('App started on port 3000'))
+// const PORT = process.env.PORT || 3001;
+// app.listen(PORT);
