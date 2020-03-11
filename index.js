@@ -80,4 +80,4 @@ app.post("/getPoint",(req,res)=>{
 //     console.log(JSON.stringify(prize))
 // })
 
-app.listen(3000, console.log('App started on port 3000'))
+app.listen('0.0.0.0' , console.log('App started on port 3000'))
