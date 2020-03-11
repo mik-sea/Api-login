@@ -29,9 +29,11 @@ app.post('/login',(req,res)=>{
         }
         else if(users[email]){
             if(users[email].password == body.password){
-                data.username = users[email].username
+                // data.id = users[email].id
+                // data.username = users[email].username
                 data.email = users[email].email
-                data.telephone  = users[email].telephone
+                // data.telephone  = users[email].telephone
+                // data.poin = users[email].poin
                 console.log(data)
                 return res.json(data)
             }
@@ -45,7 +47,9 @@ app.post('/login',(req,res)=>{
         }
 })
 app.get("/list",(req,res)=>{
-        return res.json(users)
+    var email = req.param('email')
+    console.log(email)
+    return res.json(users[email])
 })
 
 app.post("/postPoint",(req,res)=>{
@@ -57,10 +61,16 @@ app.post("/postPoint",(req,res)=>{
 app.post("/getPoint",(req,res)=>{
     const { body } = req
     var token = body.token
-    if(point[token]){
-        console.log("ada tokennya")
+    var email = body.email
+    if(point[token] && email){
+        // console.log("ada tokennya")
+        var pointt = users[email].poin + point[token].poin
+        var a = users[email].poin = pointt
+        console.log(a)
+        return res.json(a)
     }else{
         console.log("gak ada token")
+        return res.json("Gagal menambah koin")
     }
 })
 
